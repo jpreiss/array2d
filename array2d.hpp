@@ -1,6 +1,11 @@
 #ifndef __ARRAY2D_HPP__
 #define __ARRAY2D_HPP__
 
+//
+// Copyright 2013 James Preiss.
+// Public Domain - Attribution is appreciated.
+//
+
 #include <utility>
 #include <vector>
 
