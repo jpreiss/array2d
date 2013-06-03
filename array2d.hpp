@@ -2,6 +2,17 @@
 #define __ARRAY2D_HPP__
 
 //
+// StaticArray2D has fixed size at compile-time,
+// DynamicArray2D has fixed size at construction.
+//
+// Memory is stored in a contiguous block.
+// begin() and end() "iterators" allow std::algorithm compatibility.
+//
+// Operator() is used for 2D indexing.
+// Oprerator[] is used for 1D indexing.
+// Arrays are row-major: arr(3, 1) and arr(3, 2) are consecutive in memory.
+//
+//
 // Copyright 2013 James Preiss.
 // Public Domain - Attribution is appreciated.
 //
