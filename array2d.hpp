@@ -7,7 +7,6 @@
 //
 
 #include <utility>
-#include <vector>
 
 template <typename T, size_t Rows, size_t Columns>
 class StaticArray2D
@@ -22,22 +21,22 @@ public:
 		}
 	}
 
-	size_t rows()
+	size_t rows() const
 	{
 		return Rows;
 	}
 
-	size_t columns()
+	size_t columns() const
 	{
 		return Columns;
 	}
 
-	size_t to1D(size_t row, size_t column)
+	size_t to1D(size_t row, size_t column) const
 	{
 		return row * Columns + column;
 	}
 
-	std::pair<size_t, size_t> to2D(size_t index)
+	std::pair<size_t, size_t> to2D(size_t index) const
 	{
 		std::pair<size_t, size_t> result;
 		result.first = index / Columns;
@@ -63,6 +62,16 @@ public:
 	T &operator()(size_t row, size_t column)
 	{
 		return data_[to1D(row, column)];
+	}
+
+	T const *data() const
+	{
+		return data_;
+	}
+
+	T *data()
+	{
+		return data_;
 	}
 
 	T const *begin() const
@@ -97,26 +106,31 @@ public:
 	Array2D(size_t rows, size_t columns) :
 		rows_(rows),
 		columns_(columns),
-		data_(rows * columns)
+		data_(new T[rows * columns])
 	{
 	}
 
-	size_t rows()
+	~Array2D()
+	{
+		delete[] data_;
+	}
+
+	size_t rows() const
 	{
 		return rows_;
 	}
 
-	size_t columns()
+	size_t columns() const
 	{
 		return columns_;
 	}
 
-	size_t to1D(size_t row, size_t column)
+	size_t to1D(size_t row, size_t column) const
 	{
 		return row * columns_ + column;
 	}
 
-	std::pair<size_t, size_t> to2D(size_t index)
+	std::pair<size_t, size_t> to2D(size_t index) const
 	{
 		std::pair<size_t, size_t> result;
 		result.first = index / columns_;
@@ -144,6 +158,16 @@ public:
 		return data_[to1D(row, column)];
 	}
 
+	T const *data() const
+	{
+		return data_;
+	}
+
+	T *data()
+	{
+		return data_;
+	}
+
 	T const *begin() const
 	{
 		return data_.data();
@@ -167,6 +191,6 @@ public:
 private:
 	size_t rows_;
 	size_t columns_;
-	std::vector<T> data_;
+	T *data_;
 };
 #endif // __ARRAY2D_HPP__
