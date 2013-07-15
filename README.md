@@ -5,7 +5,7 @@ Simple, one-header static and dynamic 2D arrays in C++.  Public domain licensed.
 
 
 `StaticArray2D` has fixed size at compile-time,
-`DynamicArray2D` has fixed size at construction.
+`Array2D` has fixed size at construction.
 
 
 Memory is stored in a contiguous block.
