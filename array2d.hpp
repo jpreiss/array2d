@@ -175,22 +175,22 @@ public:
 
 	T const *begin() const
 	{
-		return data_.data();
+		return data_;
 	}
 
 	T *begin()
 	{
-		return data_.data();
+		return data_;
 	}
 
 	T const *end() const
 	{
-		return data_.data() + rows_ * columns_;
+		return data_ + rows_ * columns_;
 	}
 
 	T *end()
 	{
-		return data_.data() + rows_ * columns_;
+		return data_ + rows_ * columns_;
 	}
 
 private:
