@@ -140,7 +140,7 @@ public:
 
 	std::pair<size_t, size_t> to2D(size_t index) const
 	{
-		return std::make_pair(index / Columns, index % Columns);
+		return std::make_pair(index / columns_, index % columns_);
 	}
 
 	T const &operator[](size_t index) const
