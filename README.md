@@ -9,7 +9,7 @@ Simple, one-header static and dynamic 2D arrays in C++.  Public domain licensed.
 
 
 Memory is stored in a contiguous block.
-`begin()` and `end()` "iterators" allow `std::algorithm` compatibility.
+`begin()` and `end()` return pointers, which work as iterators for `std::algorithm`.
 
 `Operator()` is used for 2D indexing.
 `Oprerator[]` is used for 1D indexing.
