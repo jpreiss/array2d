@@ -120,7 +120,7 @@ public:
 
 	Array2D(Array2D &&a) :
 		rows_(a.rows_),
-		columns(a.columns_),
+		columns_(a.columns_),
 		data_(a.data_)
 	{
 		a.data_ = nullptr;
