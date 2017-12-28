@@ -118,6 +118,14 @@ public:
 	{
 	}
 
+	Array2D(Array2D &&a) :
+		rows_(a.rows_),
+		columns(a.columns_),
+		data_(a.data_)
+	{
+		a.data_ = nullptr;
+	}
+
 	~Array2D()
 	{
 		delete[] data_;
