@@ -1,7 +1,7 @@
 array2d
 =======
 
-Simple, one-header static and dynamic 2D arrays in C++.  Public domain licensed.
+Simple, one-header static and dynamic 2D arrays in C++.  MIT licensed.
 
 
 `StaticArray2D` has fixed size at compile-time,
